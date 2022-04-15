@@ -6,6 +6,9 @@
 /out-tsc
 /bazel-out
 
+# exclude ssl
+ssl
+
 # Node
 /node_modules
 npm-debug.log
