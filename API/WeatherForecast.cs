@@ -1,7 +1,7 @@
 using System;
 
-namespace API
-{
+namespace DatingApp.Api
+{ 
     public class WeatherForecast
     {
         public DateTime Date { get; set; }

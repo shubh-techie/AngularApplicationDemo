@@ -1,49 +1,56 @@
-﻿using API.Model;
+﻿using DatingApp.Api.Entities;
+using DatingApp.Api.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
-namespace API.Controllers
+namespace DatingApp.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
     public class UsersController
     {
+        private readonly IDataBaseService _dataBaseService;
+        public UsersController(IDataBaseService dataBaseService)
+        {
+            _dataBaseService = dataBaseService;
+        }
+
         [HttpGet("all", Name = "GetAllUsers")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<IEnumerable<User>>> GetAsync()
+        public async Task<ActionResult<IEnumerable<AppUser>>> GetAsync()
         {
-            return await GetUsers();
+            return await this._dataBaseService.GetAllAsync();
         }
 
         [HttpGet("{id}", Name = "GetByID")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<User>> GetAsync(int id)
+        public async Task<ActionResult<AppUser>> GetAsync(int id)
         {
-            return await GetById(id);
+            return await this._dataBaseService.GetByIdAsync(id);
         }
 
-        private static async Task<User> GetById(int id)
-        {
-            List<User> users = await GetUsers();
-            return users.Find(x => x.ID == id);
-        }
+        //private static async Task<AppUser> GetById(int id)
+        //{
+        //    List<AppUser> users = await GetUsers();
+        //    return users.Find(x => x.Id == id);
+        //}
 
-        private static Task<List<User>> GetUsers()
-        {
-            List<User> users = new List<User>();
-            users.Add(new User() { ID = 1, Name = "Sam", Age = 19, Location = "Seatte" });
-            users.Add(new User() { ID = 2, Name = "Tom", Age = 19, Location = "Seatte" });
-            users.Add(new User() { ID = 3, Name = "Bob", Age = 19, Location = "Seatte" });
-            users.Add(new User() { ID = 4, Name = "Rack", Age = 19, Location = "Seatte" });
-            users.Add(new User() { ID = 5, Name = "Rock", Age = 19, Location = "Seatte" });
-            users.Add(new User() { ID = 6, Name = "Jacob", Age = 19, Location = "Seatte" });
-            return Task.FromResult(users);
-        }
+        //private static Task<List<AppUser>> GetUsers()
+        //{
+        //    var users = new List<AppUser>
+        //    {
+        //        new AppUser() { Id = 1, FirstName = "Sam", LastName="smith",  UserName="SamHello" },
+        //        new AppUser() { Id = 2, FirstName = "Tom", LastName="smith", UserName="SamHello" },
+        //        new AppUser() { Id = 3, FirstName = "Bob", LastName="smith", UserName="SamHello" },
+        //        new AppUser() { Id = 4, FirstName = "Rack",LastName="smith",  UserName="SamHello" },
+        //        new AppUser() { Id = 5, FirstName = "Rock", LastName="smith", UserName="SamHello" },
+        //        new AppUser() { Id = 6, FirstName = "Jacob", LastName="smith", UserName="SamHello" }
+        //    };
+        //    return Task.FromResult(users);
+        //}
     }
 }
