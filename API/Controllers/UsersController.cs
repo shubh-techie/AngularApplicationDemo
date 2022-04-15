@@ -1,5 +1,7 @@
-﻿using DatingApp.Api.Entities;
+﻿using DatingApp.Api.Contracts;
+using DatingApp.Api.Entities;
 using DatingApp.Api.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -7,50 +9,34 @@ using System.Threading.Tasks;
 
 namespace DatingApp.Api.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class UsersController
+    public class UsersController : ApiControllerBase
     {
-        private readonly IDataBaseService _dataBaseService;
-        public UsersController(IDataBaseService dataBaseService)
+        private readonly IUserAccountService _userAccountService;
+
+        public UsersController(IUserAccountService userAccountService)
         {
-            _dataBaseService = dataBaseService;
+            _userAccountService = userAccountService;
         }
 
-        [HttpGet("all", Name = "GetAllUsers")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<IEnumerable<AppUser>>> GetAsync()
+        [AllowAnonymous]
+        [HttpGet(Name = "GetUsers")]
+        public async Task<ActionResult<IEnumerable<UserInfoDto>>> GetUsersAsync()
         {
-            return await this._dataBaseService.GetAllAsync();
+            return await this._userAccountService.GetAllAsync();
         }
 
-        [HttpGet("{id}", Name = "GetByID")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<AppUser>> GetAsync(int id)
+        [HttpGet("all", Name = "GetUsersDetails")]
+        public async Task<ActionResult<IEnumerable<AppUser>>> GetUsersDetailsAsync()
         {
-            return await this._dataBaseService.GetByIdAsync(id);
+            return await this._userAccountService.GetUserDetails();
         }
 
-        //private static async Task<AppUser> GetById(int id)
-        //{
-        //    List<AppUser> users = await GetUsers();
-        //    return users.Find(x => x.Id == id);
-        //}
+        [Authorize]
+        [HttpGet("{id}", Name = "GetUser")]
+        public async Task<ActionResult<UserInfoDto>> GetUserAsync(int id)
+        {
+            return await this._userAccountService.GetByIdAsync(id);
+        }
 
-        //private static Task<List<AppUser>> GetUsers()
-        //{
-        //    var users = new List<AppUser>
-        //    {
-        //        new AppUser() { Id = 1, FirstName = "Sam", LastName="smith",  UserName="SamHello" },
-        //        new AppUser() { Id = 2, FirstName = "Tom", LastName="smith", UserName="SamHello" },
-        //        new AppUser() { Id = 3, FirstName = "Bob", LastName="smith", UserName="SamHello" },
-        //        new AppUser() { Id = 4, FirstName = "Rack",LastName="smith",  UserName="SamHello" },
-        //        new AppUser() { Id = 5, FirstName = "Rock", LastName="smith", UserName="SamHello" },
-        //        new AppUser() { Id = 6, FirstName = "Jacob", LastName="smith", UserName="SamHello" }
-        //    };
-        //    return Task.FromResult(users);
-        //}
     }
 }

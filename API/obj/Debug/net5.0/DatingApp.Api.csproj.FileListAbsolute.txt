@@ -1,4 +1,3 @@
-C:\Users\shubh\source\repos\AngularApplicationDemo\API\obj\Debug\net5.0\DatingApp.Api.csproj.AssemblyReference.cache
 C:\Users\shubh\source\repos\AngularApplicationDemo\API\obj\Debug\net5.0\DatingApp.Api.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\shubh\source\repos\AngularApplicationDemo\API\obj\Debug\net5.0\DatingApp.Api.AssemblyInfoInputs.cache
 C:\Users\shubh\source\repos\AngularApplicationDemo\API\obj\Debug\net5.0\DatingApp.Api.AssemblyInfo.cs
@@ -54,3 +53,21 @@ C:\Users\shubh\source\repos\AngularApplicationDemo\API\obj\Debug\net5.0\DatingAp
 C:\Users\shubh\source\repos\AngularApplicationDemo\API\obj\Debug\net5.0\ref\DatingApp.Api.dll
 C:\Users\shubh\source\repos\AngularApplicationDemo\API\obj\Debug\net5.0\DatingApp.Api.pdb
 C:\Users\shubh\source\repos\AngularApplicationDemo\API\obj\Debug\net5.0\DatingApp.Api.genruntimeconfig.cache
+C:\Users\shubh\source\repos\AngularApplicationDemo\API\bin\Debug\net5.0\System.Net.Http.Formatting.dll
+C:\Users\shubh\source\repos\AngularApplicationDemo\API\bin\Debug\net5.0\System.Web.Http.dll
+C:\Users\shubh\source\repos\AngularApplicationDemo\API\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\shubh\source\repos\AngularApplicationDemo\API\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Users\shubh\source\repos\AngularApplicationDemo\API\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\shubh\source\repos\AngularApplicationDemo\API\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\shubh\source\repos\AngularApplicationDemo\API\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\shubh\source\repos\AngularApplicationDemo\API\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\shubh\source\repos\AngularApplicationDemo\API\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\shubh\source\repos\AngularApplicationDemo\API\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\shubh\source\repos\AngularApplicationDemo\API\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\shubh\source\repos\AngularApplicationDemo\API\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+C:\Users\shubh\source\repos\AngularApplicationDemo\API\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\shubh\source\repos\AngularApplicationDemo\API\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\shubh\source\repos\AngularApplicationDemo\API\obj\Debug\net5.0\DatingApp.Api.csproj.AssemblyReference.cache
+C:\Users\shubh\source\repos\AngularApplicationDemo\API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\shubh\source\repos\AngularApplicationDemo\API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\shubh\source\repos\AngularApplicationDemo\API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
